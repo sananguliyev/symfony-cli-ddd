@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+use Webbala\Application\Bootstrap\DiKeys;
+use Symfony\Component\Console\Application;
+
+/** @var \Symfony\Component\DependencyInjection\ContainerBuilder $container */
+$container = require dirname(__DIR__) . '/src/Application/Bootstrap/dependencies.php';
+
+$application = new Application();
+
+/** @var \Webbala\Application\Commands\ProductsCommand $exchangeCommand */
+$exchangeCommand = $container->get(DiKeys::EXCHANGE_COMMAND);
+
+$application->add($exchangeCommand);
+
+$application->run();

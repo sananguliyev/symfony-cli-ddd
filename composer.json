@@ -1,0 +1,31 @@
+{
+  "name": "SananGuliyev/symfony-cli-ddd",
+  "description": "Symfony CLI example with DDD",
+  "authors": [
+    {
+      "name": "Sanan Guliyev",
+      "email": "sanan@guliev.info"
+    }
+  ],
+  "config": {
+    "bin-dir": "bin/",
+    "disable-tls": true,
+    "secure-http": false
+  },
+  "require": {
+    "symfony/console": "3.3.*",
+    "symfony/dependency-injection": "3.3.*",
+    "guzzlehttp/guzzle": "6.3.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "6.3.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Webbala\\Application\\": "./src/application",
+      "Webbala\\Domain\\": "./src/domain",
+      "Webbala\\Infrastructure\\": "./src/infrastructure"
+    }
+  },
+  "license": "proprietary"
+}
